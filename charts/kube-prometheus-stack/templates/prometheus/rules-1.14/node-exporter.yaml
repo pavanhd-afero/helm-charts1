@@ -22,7 +22,8 @@ metadata:
 {{- end }}
 spec:
   groups:
-  - name: node-exporter
+  - interval: 2m
+    name: node-exporter
     rules:
 {{- if not (.Values.defaultRules.disabled.NodeFilesystemSpaceFillingUp | default false) }}
     - alert: NodeFilesystemSpaceFillingUp
